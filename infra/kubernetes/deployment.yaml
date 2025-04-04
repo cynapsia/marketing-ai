@@ -1,0 +1,129 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marketing-ai-platform
+  namespace: marketing-ai
+  labels:
+    app: marketing-ai-platform
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: marketing-ai-platform
+  template:
+    metadata:
+      labels:
+        app: marketing-ai-platform
+    spec:
+      serviceAccountName: marketing-ai-sa
+      containers:
+      - name: marketing-ai-platform
+        image: marketing-ai-platform:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        env:
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: environment
+        - name: DEBUG
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: debug
+        - name: API_TIMEOUT
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: api_timeout
+        - name: API_RETRIES
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: api_retries
+        - name: GEMINI_MODEL_ID
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: gemini_model_id
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: marketing-ai-secrets
+              key: gemini_api_key
+        - name: MINIO_ENDPOINT
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: minio_endpoint
+        - name: MINIO_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: marketing-ai-secrets
+              key: minio_access_key
+        - name: MINIO_SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: marketing-ai-secrets
+              key: minio_secret_key
+        - name: NESSIE_ENDPOINT
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: nessie_endpoint
+        - name: NESSIE_BRANCH
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: nessie_branch
+        - name: MLFLOW_TRACKING_URI
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: mlflow_tracking_uri
+        - name: DSPY_OPTIMIZATION_PATH
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: dspy_optimization_path
+        - name: CERBERUS_POLICY_PATH
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: cerberus_policy_path
+        - name: HITL_ENABLED
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: hitl_enabled
+        - name: LOGFIRE_SERVICE_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: logfire_service_name
+        - name: LOGFIRE_ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: marketing-ai-config
+              key: logfire_environment
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+          limits:
+            cpu: "2"
+            memory: "4Gi"
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 15
+          periodSeconds: 20 

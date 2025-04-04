@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: marketing-ai-config
+  namespace: marketing-ai
+data:
+  environment: "production"
+  debug: "false"
+  api_timeout: "30"
+  api_retries: "3"
+  gemini_model_id: "gemini-pro"
+  minio_endpoint: "http://minio.marketing-ai:9000"
+  nessie_endpoint: "http://nessie.marketing-ai:19120"
+  nessie_branch: "main"
+  mlflow_tracking_uri: "http://mlflow.marketing-ai:5000"
+  dspy_optimization_path: "/app/output/compiled_dspy"
+  cerberus_policy_path: "/app/config/nemo/policies"
+  hitl_enabled: "true"
+  logfire_service_name: "marketing_ai_platform"
+  logfire_environment: "production" 

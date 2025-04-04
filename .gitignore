@@ -1,0 +1,209 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# IDEs e editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Logs e dados
+*.log
+logs/
+*.out
+*.err
+*.pid
+*.seed
+*.pid.lock
+*.sqlite
+*.sqlite3
+*.db
+
+# Arquivos de cache
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.ruff_cache/
+.mypy_cache/
+
+# Arquivos de build e distribuição
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dll
+*.dylib
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar
+*.gz
+*.7z
+*.rar
+*.iso
+*.img
+*.bin
+
+# Arquivos de ambiente e configuração local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local.yaml
+*.local.yml
+*.local.json
+*.local.toml
+
+# Arquivos de dados e modelos
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.model
+*.weights
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.pb
+*.tensorflow
+*.mlmodel
+*.mlpackage
+
+# Diretórios específicos do projeto
+output/
+data/
+models/
+checkpoints/
+runs/
+wandb/
+mlruns/
+logs/
+tmp/
+temp/
+
+# Arquivos de visualização
+output/visualizations/
+*.svg
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.ico
+*.webp
+*.avif
+*.heic
+*.heif
+
+# Arquivos de áudio e vídeo
+*.mp3
+*.mp4
+*.wav
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+*.webm
+
+# Arquivos de fonte
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.eot
+
+# Arquivos de cache e temporários
+*.cache
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Arquivos específicos do projeto
+# MinIO/Iceberg/Nessie
+minio_data/
+nessie_data/
+iceberg_data/
+
+# Qdrant
+qdrant_data/
+
+# MLflow
+mlruns/
+mlflow.db
+
+# OpenSPG
+openspg_data/
+
+# ODD
+odd_data/
+
+# Fine-tuning
+fine_tuning/datasets/
+fine_tuning/jobs/
+fine_tuning/evaluation/
+fine_tuning/models/
+
+# DSPy
+output/compiled_dspy/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!example.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+.terraform.lock.hcl
+
+# Kubernetes
+kubeconfig
+*.kubeconfig

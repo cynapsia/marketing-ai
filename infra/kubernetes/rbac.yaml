@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: marketing-ai-sa
+  namespace: marketing-ai
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: marketing-ai-role
+  namespace: marketing-ai
+rules:
+- apiGroups: [""]
+  resources: ["configmaps", "secrets"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: marketing-ai-role-binding
+  namespace: marketing-ai
+subjects:
+- kind: ServiceAccount
+  name: marketing-ai-sa
+  namespace: marketing-ai
+roleRef:
+  kind: Role
+  name: marketing-ai-role
+  apiGroup: rbac.authorization.k8s.io 

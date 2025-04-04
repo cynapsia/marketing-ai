@@ -1,0 +1,187 @@
+# Arquivos de texto
+*.py text diff=python
+*.md text diff=markdown
+*.yaml text
+*.yml text
+*.json text
+*.txt text
+*.toml text
+*.env text
+*.env.* text
+*.ini text
+*.cfg text
+*.conf text
+*.sh text
+*.ps1 text
+*.bat text
+*.cmd text
+*.sql text
+*.graphql text
+*.gql text
+*.proto text
+*.colang text
+*.dspy text
+
+# Arquivos de configuração
+.gitattributes text
+.gitignore text
+.editorconfig text
+.prettierrc text
+.eslintrc text
+.pylintrc text
+.mypy.ini text
+ruff.toml text
+pyproject.toml text
+setup.cfg text
+setup.py text
+MANIFEST.in text
+requirements.txt text
+requirements-dev.txt text
+
+# Arquivos de documentação
+*.rst text
+*.adoc text
+*.asciidoc text
+*.wiki text
+*.doc text
+*.docx text
+*.pdf binary
+*.xls binary
+*.xlsx binary
+*.ppt binary
+*.pptx binary
+
+# Arquivos de código fonte
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+*.css text
+*.scss text
+*.sass text
+*.less text
+*.html text
+*.xml text
+*.svg text
+*.vue text
+*.vue.html text
+*.vue.js text
+*.vue.css text
+
+# Arquivos de dados
+*.csv text
+*.tsv text
+*.tab text
+*.dat text
+*.log text
+*.out text
+*.err text
+
+# Arquivos de teste
+*.test.js text
+*.test.ts text
+*.test.py text
+*.spec.js text
+*.spec.ts text
+*.spec.py text
+*.test.json text
+*.test.yaml text
+*.test.yml text
+
+# Arquivos de template
+*.template text
+*.tmpl text
+*.tpl text
+*.j2 text
+*.jinja2 text
+*.jinja text
+
+# Arquivos de configuração de IDE
+.vscode/* text
+.idea/* text
+*.sublime-project text
+*.sublime-workspace text
+
+# Arquivos de build e distribuição
+*.pyc binary
+*.pyo binary
+*.pyd binary
+*.so binary
+*.dll binary
+*.dylib binary
+*.class binary
+*.jar binary
+*.war binary
+*.ear binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+*.rar binary
+*.iso binary
+*.img binary
+*.bin binary
+
+# Arquivos de imagem
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.bmp binary
+*.tiff binary
+*.ico binary
+*.webp binary
+*.avif binary
+*.heic binary
+*.heif binary
+
+# Arquivos de áudio e vídeo
+*.mp3 binary
+*.mp4 binary
+*.wav binary
+*.avi binary
+*.mov binary
+*.wmv binary
+*.flv binary
+*.mkv binary
+*.webm binary
+
+# Arquivos de fonte
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.eot binary
+
+# Arquivos de modelo e dados grandes
+*.h5 binary
+*.hdf5 binary
+*.pkl binary
+*.pickle binary
+*.model binary
+*.weights binary
+*.pt binary
+*.pth binary
+*.onnx binary
+*.tflite binary
+*.pb binary
+*.tensorflow binary
+*.mlmodel binary
+*.mlpackage binary
+
+# Arquivos de cache e temporários
+*.cache binary
+*.tmp binary
+*.temp binary
+*.swp binary
+*.swo binary
+*~ binary
+.DS_Store binary
+Thumbs.db binary
+
+# Configurações específicas do projeto
+src/**/*.py text diff=python
+tests/**/*.py text diff=python
+scripts/**/*.py text diff=python
+config/**/*.{yaml,yml,json} text
+docs/**/*.{md,rst} text 

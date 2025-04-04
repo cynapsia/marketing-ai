@@ -1,0 +1,37 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: marketing-ai
+
+resources:
+- deployment.yaml
+- service.yaml
+- configmap.yaml
+- secret.yaml
+- rbac.yaml
+- hpa.yaml
+
+commonLabels:
+  app: marketing-ai-platform
+  environment: production
+
+configMapGenerator:
+- name: marketing-ai-config
+  behavior: merge
+  envs:
+  - .env.production
+
+secretGenerator:
+- name: marketing-ai-secrets
+  behavior: merge
+  envs:
+  - .env.secrets
+
+images:
+- name: marketing-ai-platform
+  newName: marketing-ai-platform
+  newTag: latest
+
+replicas:
+- name: marketing-ai-platform
+  count: 3 
